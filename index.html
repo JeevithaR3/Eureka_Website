@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HackSky — National Hackathon Club</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="HackSky — National level hackathon club. Build, learn, and compete.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#">
+        <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#ff6a00"/>
+              <stop offset="1" stop-color="#d500f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="100" height="100" rx="18" fill="url(#g)"/>
+          <text x="50" y="58" font-size="42" fill="#fff" font-family="Segoe UI, Roboto, Arial" text-anchor="middle">HS</text>
+        </svg>
+        <span class="logo-text">Eureka</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+        <button class="cta" id="joinBtn">Join</button>
+      </nav>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <section class="hero">
+  <div class="hero-inner container">
+  <div class="hero-text">
+    <h1 class="title">
+      Reva's Hackathon Club<br />
+      <span class="accent">Build. Ship. Innovate.</span>
+    </h1>
+    <p class="lead">
+      A national-level community of creators, hackers and makers — organizing flagship hackathons, workshops and hack nights.
+    </p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#events">Upcoming</a>
+      <a class="btn ghost" href="#about">Learn more</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="your-image.jpg" alt="Reva Hackathon Club" />
+  </div>
+</div>
+
+</section>
+    <section id="about" class="container section about">
+      <h2 class="section-title reveal">About Eureka</h2>
+      <div class="about-grid">
+        <div class="card reveal delay-1">
+          <h3>Mission</h3>
+          <p>Empower students to build impactful projects and connect with industry mentors across India.</p>
+        </div>
+        <div class="card reveal delay-2">
+          <h3>What We Do</h3>
+          <ul>
+            <li>Host national hackathons & mini-hacks</li>
+            <li>Workshops, mentorship, and sprints</li>
+            <li>Project showcases & recruitment drives</li>
+          </ul>
+        </div>
+        <div class="card reveal delay-3">
+          <h3>Why Join</h3>
+          <p>Network, learn, and win prizes — whether you're a beginner or an expert.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="container section events">
+      <h2 class="section-title reveal">Events</h2>
+      <div class="events-grid">
+        <article class="event-card reveal delay-1">
+          <div class="event-badge">Flagship</div>
+          <h3>HackSky National 2025</h3>
+          <p>A 48-hour flagship hackathon with industry mentors and cash prizes.</p>
+          <a class="more" href="#">Register</a>
+        </article>
+
+        <article class="event-card reveal delay-2">
+          <div class="event-badge">Workshop</div>
+          <h3>AI for Good</h3>
+          <p>Hands-on workshop on responsible AI and prototyping.</p>
+          <a class="more" href="#">Sign up</a>
+        </article>
+
+        <article class="event-card reveal delay-3">
+          <div class="event-badge">Sprint</div>
+          <h3>Weekend Build Sprint</h3>
+          <p>Short focused sprints to ship small projects.</p>
+          <a class="more" href="#">Learn more</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="team" class="container section team">
+      <h2 class="section-title reveal">Team</h2>
+      <div class="team-grid">
+        <div class="person-card reveal delay-1">
+          <div class="avatar">JR</div>
+          <h4>Jeevitha R.</h4>
+          <p>Techical team</p>
+        </div>
+        <div class="person-card reveal delay-2">
+          <div class="avatar">AK</div>
+          <h4>Ashwin K.</h4>
+          <p>Lead Mentorship</p>
+        </div>
+        <div class="person-card reveal delay-3">
+          <div class="avatar">SV</div>
+          <h4>Sneha V.</h4>
+          <p>Design & Outreach</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container section contact">
+      <h2 class="section-title reveal">Contact</h2>
+      <form id="contactForm" class="contact-form reveal delay-1">
+        <div class="row">
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us something..." required></textarea>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send</button>
+          <button class="btn ghost" type="button" id="clearBtn">Clear</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© HackSky 2025 — Made with 🔥 by students</p>
+      <div class="social">
+        <a href="#" aria-label="twitter">Twitter</a>
+        <a href="#" aria-label="github">GitHub</a>
+        <a href="#" aria-label="instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

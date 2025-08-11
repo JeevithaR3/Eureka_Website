@@ -1,0 +1,139 @@
+/* HackSky — styles.css
+   Palette: vibrant gradient (orange -> magenta -> purple) with deep navy background.
+*/
+
+:root{
+  --bg:#0b1020;
+  --card:#0f1724;
+  --muted:#9aa4b2;
+  --accent1:#ff6a00;
+  --accent2:#d500f9;
+  --accent3:#00c2ff;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(ellipse at 10% 10%, rgba(213,0,249,0.08), transparent 10%),
+              linear-gradient(180deg, #031028 0%, #071226 100%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+/* Container */
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+
+/* Header */
+.site-header{position:fixed;left:0;right:0;top:0;z-index:40;background:linear-gradient(180deg, rgba(11,16,32,0.6), rgba(11,16,32,0.35));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.site-header .container{display:flex;align-items:center;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+.logo-mark{width:44px;height:44px;flex:0 0 44px;border-radius:8px;box-shadow:0 6px 18px rgba(213,0,249,0.12)}
+.logo-text{font-weight:700;letter-spacing:0.2px}
+.nav{margin-left:auto;display:flex;align-items:center;gap:1rem}
+.nav a{color:var(--muted);text-decoration:none;padding:.6rem .8rem;border-radius:8px;transition:all .25s}
+.nav a:hover{color:white;background:rgba(255,255,255,0.03);transform:translateY(-2px)}
+.cta{background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:#fff;padding:.55rem .9rem;border-radius:8px;cursor:pointer;box-shadow:0 6px 20px rgba(213,0,249,0.12)}
+
+/* Mobile nav toggle */
+.nav-toggle{display:none;margin-left:auto;background:none;border:0;color:var(--muted);font-size:20px;padding:8px}
+@media(max-width:900px){
+  .nav{display:none;position:fixed;right:18px;top:66px;background:var(--card);padding:12px;border-radius:12px;flex-direction:column;min-width:180px}
+  .nav.show{display:flex}
+  .nav-toggle{display:block}
+}
+
+/* Hero */
+.hero{position:relative;padding:80px 0 80px;overflow:hidden}
+.hero-inner{position:relative;z-index:3}
+.title{font-size:40px;line-height:1.02;margin:0 0 .6rem}
+.title .accent{background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);max-width:720px}
+.hero-cta{margin-top:1.2rem;display:flex;gap:10px}
+.btn{padding:.65rem 1.1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);text-decoration:none;color:inherit;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border:none;box-shadow:0 12px 30px rgba(213,0,249,0.12)}
+.btn.ghost{background:transparent}
+
+/* Particles canvas */
+#particles{position:absolute;inset:0;z-index:1;opacity:0.85;pointer-events:none}
+
+/* Sections */
+.section{padding:60px 0}
+.section-title{font-size:28px;margin-bottom:18px}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--glass);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 24px rgba(2,6,23,0.6)}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.event-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;position:relative;overflow:hidden}
+.event-badge{position:absolute;right:12px;top:12px;background:rgba(0,0,0,0.35);padding:6px 10px;border-radius:8px;font-size:12px}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.person-card{background:var(--glass-2);padding:18px;border-radius:12px;text-align:center}
+.avatar{width:72px;height:72px;border-radius:14px;background:linear-gradient(90deg,var(--accent2),var(--accent3));display:inline-flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px;color:#042030;font-size:20px}
+
+/* Contact */
+.contact-form .row{display:flex;gap:12px;margin-bottom:12px}
+.contact-form input, .contact-form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+
+/* Footer */
+.site-footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
+.social a{margin-left:12px;color:var(--muted);text-decoration:none}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(12px) scale(.995);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.9,.2,1)}
+.reveal.show{opacity:1;transform:none}
+.delay-1{transition-delay:.08s}
+.delay-2{transition-delay:.16s}
+.delay-3{transition-delay:.24s}
+
+/* Floating shapes (decor) */
+.hero::before, .hero::after{
+  content:"";position:absolute;border-radius:50%;opacity:0.12;filter:blur(40px);z-index:2;
+}
+.hero::before{width:420px;height:420px;left:-80px;top:-60px;background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+.hero::after{width:300px;height:300px;right:-60px;bottom:-20px;background:linear-gradient(90deg,var(--accent2),var(--accent3))}
+
+/* small screens */
+@media(max-width:900px){
+  .about-grid,.events-grid,.team-grid{grid-template-columns:1fr}
+  .title{font-size:32px}
+}
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* Mobile: stack text and image */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image {
+    margin-top: 1.5rem;
+  }
+}
