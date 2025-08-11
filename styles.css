@@ -33,7 +33,16 @@ body{
 .site-header{position:fixed;left:0;right:0;top:0;z-index:40;background:linear-gradient(180deg, rgba(11,16,32,0.6), rgba(11,16,32,0.35));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
 .site-header .container{display:flex;align-items:center;gap:1rem}
 .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
-.logo-mark{width:44px;height:44px;flex:0 0 44px;border-radius:8px;box-shadow:0 6px 18px rgba(213,0,249,0.12)}
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(213,0,249,0.12);
+  object-fit: contain; /* keeps logo proportions */
+  background: none; /* remove background color if any */
+}
+
 .logo-text{font-weight:700;letter-spacing:0.2px}
 .nav{margin-left:auto;display:flex;align-items:center;gap:1rem}
 .nav a{color:var(--muted);text-decoration:none;padding:.6rem .8rem;border-radius:8px;transition:all .25s}
