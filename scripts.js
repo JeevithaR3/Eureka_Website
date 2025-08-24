@@ -1,4 +1,5 @@
-  // Nav slider underline effect (works on all pages)
+// Nav slider underline effect (works on all pages, runs after DOM loaded)
+document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.nav').forEach(nav => {
     const navSlider = nav.querySelector('.nav-slider');
     const navLinks = Array.from(nav.querySelectorAll('a'));
@@ -10,7 +11,11 @@
       navSlider.style.left = (elRect.left - navRect.left) + 'px';
     }
     // Set initial slider position to current page
-    let activeLink = navLinks.find(a => window.location.pathname === a.getAttribute('href'));
+    let activeLink = navLinks.find(a => {
+      const href = a.getAttribute('href');
+      if (href === '/' && (window.location.pathname === '/' || window.location.pathname === '/index.html')) return true;
+      return window.location.pathname.startsWith(href) && href !== '/';
+    });
     if (!activeLink) activeLink = navLinks[0];
     moveNavSliderTo(activeLink);
     // Animate on hover/click
@@ -25,6 +30,7 @@
     });
     window.addEventListener('resize', () => moveNavSliderTo(activeLink));
   });
+});
 // Simple interactive JS: mobile nav, reveal on scroll, particles canvas, form handler
 document.addEventListener('DOMContentLoaded', function(){
   // Mobile nav toggle
