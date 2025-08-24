@@ -1,5 +1,5 @@
 // Nav slider underline effect (works on all pages, runs after DOM loaded)
-document.addEventListener('DOMContentLoaded', function() {
+function updateNavSliderAllNavs() {
   document.querySelectorAll('.nav').forEach(nav => {
     const navSlider = nav.querySelector('.nav-slider');
     const navLinks = Array.from(nav.querySelectorAll('a'));
@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     window.addEventListener('resize', () => moveNavSliderTo(activeLink));
   });
+}
+
+document.addEventListener('DOMContentLoaded', updateNavSliderAllNavs);
+window.addEventListener('popstate', function() {
+  setTimeout(updateNavSliderAllNavs, 10);
 });
 // Simple interactive JS: mobile nav, reveal on scroll, particles canvas, form handler
 document.addEventListener('DOMContentLoaded', function(){
