@@ -34,7 +34,7 @@ function updateNavSliderAllNavs() {
 
 document.addEventListener('DOMContentLoaded', updateNavSliderAllNavs);
 window.addEventListener('popstate', function() {
-  setTimeout(updateNavSliderAllNavs, 10);
+  setTimeout(updateNavSliderAllNavs, 80);
 });
 // Simple interactive JS: mobile nav, reveal on scroll, particles canvas, form handler
 document.addEventListener('DOMContentLoaded', function(){
