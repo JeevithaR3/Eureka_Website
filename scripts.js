@@ -1,3 +1,29 @@
+  // Nav slider underline effect
+  const nav = document.getElementById('nav');
+  const navSlider = nav && nav.querySelector('.nav-slider');
+  const navLinks = nav ? Array.from(nav.querySelectorAll('a')) : [];
+  function moveNavSliderTo(el) {
+    if (!navSlider || !el) return;
+    const navRect = nav.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    navSlider.style.width = elRect.width + 'px';
+    navSlider.style.left = (elRect.left - navRect.left) + 'px';
+  }
+  // Set initial slider position to current page
+  let activeLink = navLinks.find(a => window.location.pathname.startsWith(a.getAttribute('href')));
+  if (!activeLink) activeLink = navLinks[0];
+  moveNavSliderTo(activeLink);
+  // Animate on hover/click
+  navLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => moveNavSliderTo(link));
+    link.addEventListener('focus', () => moveNavSliderTo(link));
+    link.addEventListener('mouseleave', () => moveNavSliderTo(activeLink));
+    link.addEventListener('click', () => {
+      activeLink = link;
+      moveNavSliderTo(activeLink);
+    });
+  });
+  window.addEventListener('resize', () => moveNavSliderTo(activeLink));
 // Simple interactive JS: mobile nav, reveal on scroll, particles canvas, form handler
 document.addEventListener('DOMContentLoaded', function(){
   // Mobile nav toggle

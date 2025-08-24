@@ -1,3 +1,21 @@
+.nav {
+  position: relative;
+}
+.nav-slider {
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(.7,0,.3,1);
+  z-index: 2;
+  pointer-events: none;
+}
+.nav a {
+  position: relative;
+  z-index: 3;
+}
 /* HackSky — styles.css
    Palette: vibrant gradient (orange -> magenta -> purple) with deep navy background.
 */
