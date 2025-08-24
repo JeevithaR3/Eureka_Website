@@ -3,6 +3,7 @@ function updateNavSliderAllNavs() {
   document.querySelectorAll('.nav').forEach(nav => {
     const navSlider = nav.querySelector('.nav-slider');
     const navLinks = Array.from(nav.querySelectorAll('a'));
+
     function moveNavSliderTo(el) {
       if (!navSlider || !el) return;
       const navRect = nav.getBoundingClientRect();
@@ -10,14 +11,19 @@ function updateNavSliderAllNavs() {
       navSlider.style.width = elRect.width + 'px';
       navSlider.style.left = (elRect.left - navRect.left) + 'px';
     }
+
     // Set initial slider position to current page
     let activeLink = navLinks.find(a => {
       const href = a.getAttribute('href');
-      if (href === '/' && (window.location.pathname === '/' || window.location.pathname === '/index.html')) return true;
+      if (href === '/' && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
+        return true;
+      }
       return window.location.pathname.startsWith(href) && href !== '/';
     });
+
     if (!activeLink) activeLink = navLinks[0];
     moveNavSliderTo(activeLink);
+
     // Animate on hover/click
     navLinks.forEach(link => {
       link.addEventListener('mouseenter', () => moveNavSliderTo(link));
@@ -28,14 +34,16 @@ function updateNavSliderAllNavs() {
         moveNavSliderTo(activeLink);
       });
     });
+
     window.addEventListener('resize', () => moveNavSliderTo(activeLink));
   });
 }
 
 document.addEventListener('DOMContentLoaded', updateNavSliderAllNavs);
-window.addEventListener('popstate', function() {
-  setTimeout(updateNavSliderAllNavs, 80);
-});
+
+// ✅ Use `pageshow` for correct highlighting after Back/Forward navigation
+window.addEventListener('pageshow', updateNavSliderAllNavs);
+
 // Simple interactive JS: mobile nav, reveal on scroll, particles canvas, form handler
 document.addEventListener('DOMContentLoaded', function(){
   // Mobile nav toggle
