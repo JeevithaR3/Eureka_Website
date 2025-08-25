@@ -1,3 +1,21 @@
+// Staggered reveal for schedule items
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.schedule-list li');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const li = entry.target;
+        const index = Array.from(items).indexOf(li);
+        setTimeout(() => {
+          li.classList.add('show');
+        }, index * 120); // 120ms stagger
+        observer.unobserve(li);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  items.forEach(li => observer.observe(li));
+});
 // Nav slider underline effect (works on all pages, runs after DOM loaded)
 function updateNavSliderAllNavs() {
   document.querySelectorAll('.nav').forEach(nav => {
