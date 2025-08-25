@@ -8,68 +8,81 @@
   <meta name="description" content="HackSky — National level hackathon club. Build, learn, and compete.">
   <link rel="icon" type="image/png" href="logo2.png" />
   <link rel="shortcut icon" href="logo2.png" type="image/x-icon" />
-
   <style>
     /* Countdown Styling */
-    .countdown-container {
-      text-align: center;
+    .hackathon-highlight {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
       background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 25px rgba(0, 255, 200, 0.4);
-      animation: fadeInUp 1.5s ease-out;
+      border-radius: 12px;
+      text-align: center;
+      animation: fadeInUp 1.2s ease;
     }
-
-    .countdown-title {
+    .hackathon-highlight h2 {
+      font-size: 2rem;
+      color: #FFD700; /* Gold for prestige */
+      margin-bottom: 0.5rem;
+    }
+    .hackathon-highlight p {
+      color: #e9edef;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .countdown-timer {
       font-size: 1.8rem;
       font-weight: bold;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #00ffcc, #0077ff, #ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 3s infinite alternate;
+      color: #25d366;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px rgba(37, 211, 102, 0.7), 0 0 16px rgba(37, 211, 102, 0.4);
+      animation: glowPulse 2s ease-in-out infinite, fadeSlide 1.2s ease;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 2px solid rgba(37, 211, 102, 0.5);
+      border-radius: 10px;
+      background: rgba(37, 211, 102, 0.08);
+    }
+    @keyframes glowPulse {
+      0%, 100% {
+        text-shadow: 0 0 8px rgba(37, 211, 102, 0.7), 0 0 16px rgba(37, 211, 102, 0.4);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 18px rgba(37, 211, 102, 1), 0 0 28px rgba(37, 211, 102, 0.8);
+        transform: scale(1.05);
+      }
+    }
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .countdown {
+    /* Layout for hero with timer on right */
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .hero-timer {
+      flex: 1;
+      min-width: 280px;
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #fff;
+      align-items: center;
     }
-
-    .countdown div {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 1rem;
-      border-radius: 0.75rem;
-      min-width: 70px;
-      box-shadow: 0 0 10px rgba(0, 255, 200, 0.6);
-      animation: pulse 2s infinite;
-    }
-
-    .countdown span {
-      display: block;
-      font-size: 0.8rem;
-      margin-top: 0.25rem;
-      opacity: 0.8;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 10px rgba(0,255,200,0.6); }
-      50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(0,255,200,1); }
-      100% { transform: scale(1); box-shadow: 0 0 10px rgba(0,255,200,0.6); }
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #0077ff; }
-      to { text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffcc; }
+    .hackathon-highlight {
+      max-width: 350px;
+      margin: auto;
     }
   </style>
 </head>
@@ -84,11 +97,10 @@
       <nav class="nav" id="nav">
         <div class="nav-slider"></div>
         <a href="/">Home</a>
-        <a href="/about">About</a>
+        <a href="#about">About</a>
         <a href="/events">Events</a>
         <a href="/team">Team</a>
         <a href="/contact">Contact</a>
-        <a class="cta" id="joinBtn" href="https://forms.gle/5XCMKkRA3L2aPNih7" target="_blank" rel="noopener">Registration</a>
       </nav>
 
       <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
@@ -100,31 +112,52 @@
       <div class="hero-inner container">
         <div class="hero-text">
           <h1 class="title">
-            Reva's Hackathon Club Presents<br />
-            <span class="accent">HackSky — National Level Hackathon</span>
+            <span class="accent">Reva’s Hackathon Club Presents</span><br />
+            🚀 National Level Hackathon 2025
           </h1>
           <p class="lead">
-            A national-level celebration of innovation, creativity and collaboration — join us to build impactful projects, network, and compete with the best minds across India.
+            Join the nation’s brightest creators, hackers, and innovators — where ideas meet execution.  
+            Compete, collaborate, and build the future with us.
           </p>
+
           <div class="hero-cta">
-            <a class="btn ghost" href="#about">Learn more</a>
+            <a class="cta" id="joinBtn" href="/events">Learn more</a>
+            <a class="cta" id="joinBtn" href="https://forms.gle/5XCMKkRA3L2aPNih7" target="_blank" rel="noopener">Register Now!!</a>
           </div>
         </div>
 
-        <!-- Countdown Timer Section -->
-        <div class="hero-image">
-          <div class="countdown-container">
-            <div class="countdown-title">Countdown to HackSky 🚀</div>
-            <div class="countdown" id="countdown">
-              <div><span id="days">00</span><span>Days</span></div>
-              <div><span id="hours">00</span><span>Hours</span></div>
-              <div><span id="minutes">00</span><span>Minutes</span></div>
-              <div><span id="seconds">00</span><span>Seconds</span></div>
-            </div>
+        <!-- Countdown Timer on Right -->
+        <div class="hero-timer">
+          <div class="hackathon-highlight">
+            <h2>Countdown to Innovation</h2>
+            <p>Be part of India’s most prestigious hackathon</p>
+            <div id="countdown" class="countdown-timer"></div>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="section container alt">
+                <h2 class="section-title accent-title reveal">Quick Facts</h2>
+                <div class="about-grid quick-facts-grid">
+                    <div class="card quick-fact-card reveal">
+                        <span class="quick-fact-num accent-title">2 Days</span>
+                        <div>of Innovation</div>
+                    </div>
+                    <div class="card quick-fact-card reveal delay-1">
+                        <span class="quick-fact-num accent-title">&#8377;3,00,000</span>
+                        <div>Prize Pool</div>
+                    </div>
+                    <div class="card quick-fact-card reveal delay-2">
+                        <span class="quick-fact-num accent-title">National</span>
+                        <div>Level Hackathon</div>
+                    </div>
+                    <div class="card quick-fact-card reveal delay-3">
+                        <span class="quick-fact-num accent-title">Mentors & Investors</span>
+                        <div>from Industry</div>
+                    </div>
+                </div>
+            </section>
 
     <section id="about" class="container section about">
       <h2 class="section-title reveal">About Eureka</h2>
@@ -145,6 +178,12 @@
           <h3>Why Join Eureka Hackathon Club?</h3>
           <p>Being part of Eureka means more than just attending events — it's about growing your skills, network, and opportunities.</p>
         </div>
+        <section class="section container alt">
+                                <h2 class="section-title accent-title reveal">Our Vision</h2>
+                                <div class="card reveal">
+                                    <p class="reveal delay-1">We believe in the power of youth-driven innovation to create a sustainable future. Hack for Earth is a platform to turn ideas into action, foster eco-consciousness, and inspire solutions that matter.</p>
+                                </div>
+        </section>
       </div>
     </section>
   </main>
@@ -176,36 +215,37 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom-bar">© HackSky 2025 — Made with 🔥 by <a href="https://github.com/JeevithaR3" class="footer-credit-link" target="_blank" rel="noopener">Jeevitha R</a> &amp; <a href="https://github.com/Markandeshwaragoudapatil" class="footer-credit-link" target="_blank" rel="noopener">Patil</a></div>
+    <div class="footer-bottom-bar">© HackSky 2025 — Made with 🔥 by 
+      <a href="https://github.com/JeevithaR3" class="footer-credit-link" target="_blank" rel="noopener">Jeevitha R</a> &amp; 
+      <a href="https://github.com/Markandeshwaragoudapatil" class="footer-credit-link" target="_blank" rel="noopener">Patil</a>
+    </div>
   </footer>
 
   <script>
-    // Countdown Script
-    const eventDate = new Date("2025-10-01T09:00:00").getTime(); // Change date here
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minutesEl = document.getElementById("minutes");
-    const secondsEl = document.getElementById("seconds");
+    // Countdown Timer Script
+    const countdown = document.getElementById("countdown");
+    // Set Event Date (Change here 👇)
+    const eventDate = new Date("2025-11-15T09:00:00").getTime();
 
-    setInterval(() => {
+    const timer = setInterval(() => {
       const now = new Date().getTime();
-      const diff = eventDate - now;
+      const distance = eventDate - now;
 
-      if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "<div>🚀 It's HackSky Time!</div>";
+      if (distance < 0) {
+        clearInterval(timer);
+        countdown.innerHTML = "🚀 Hackathon Started!";
         return;
       }
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      daysEl.textContent = days;
-      hoursEl.textContent = hours.toString().padStart(2, "0");
-      minutesEl.textContent = minutes.toString().padStart(2, "0");
-      secondsEl.textContent = seconds.toString().padStart(2, "0");
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
   </script>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
