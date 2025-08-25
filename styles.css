@@ -1,3 +1,106 @@
+/* Modern Footer Styles */
+.modern-footer {
+  position: relative;
+  padding: 0;
+  margin-top: 48px;
+  border: none;
+  background: none;
+  z-index: 10;
+}
+.footer-gradient-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(90deg, var(--accent1) 0%, var(--accent2) 50%, var(--accent3) 100%);
+  opacity: 0.13;
+  pointer-events: none;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2.5rem 0 1.2rem 0;
+}
+.footer-col h4 {
+  font-size: 1.15em;
+  margin-bottom: 0.7em;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+.footer-about-text {
+  color: var(--muted);
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 0.5em;
+}
+.footer-links a {
+  color: #e6eef8;
+  text-decoration: none;
+  transition: color 0.18s, background 0.18s, box-shadow 0.18s;
+  padding: 0.1em 0.3em;
+  border-radius: 6px;
+}
+.footer-links a:hover, .footer-links a:focus {
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+  box-shadow: 0 2px 12px rgba(0,194,255,0.10);
+}
+.footer-social {
+  display: flex;
+  gap: 1.1em;
+  margin-top: 0.2em;
+}
+.footer-social a {
+  color: #e6eef8;
+  font-size: 1.08em;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 0.1em 0.5em;
+  transition: color 0.18s, background 0.18s, box-shadow 0.18s;
+}
+.footer-social a:hover, .footer-social a:focus {
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+  box-shadow: 0 2px 12px rgba(255,255,255,0.10);
+}
+.footer-bottom-bar {
+  position: relative;
+  z-index: 2;
+  background: rgba(11,16,32,0.92);
+  color: var(--muted);
+  text-align: center;
+  font-size: 1em;
+  padding: 0.9em 0 0.5em 0;
+  border-top: 1.5px solid rgba(255,255,255,0.07);
+  margin-top: 0.5em;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.8rem;
+    align-items: stretch;
+    text-align: left;
+  }
+  .footer-col {
+    margin-bottom: 1.2em;
+  }
+}
 /* Team page modern grid */
 .team-grid {
   display: grid;
