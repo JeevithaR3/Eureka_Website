@@ -562,7 +562,7 @@ body{
 
 /* Hero */
 .hero{position:relative;padding:80px 0 80px;overflow:hidden}
-.hero-inner{position:relative;z-index:3}
+.hero-inner{position:relative;z-index:3;margin-top: 60px; }
 .title{font-size:40px;line-height:1.02;margin:0 0 .6rem}
 .title .accent{background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{color:var(--muted);max-width:720px}
