@@ -1,3 +1,7 @@
+
+.subpage main {
+  padding-top: 100px;
+}
 /* Schedule list animation */
 .schedule-list li {
   opacity: 0;
