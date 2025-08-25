@@ -1,14 +1,23 @@
 // Reveal schedule items one by one as they scroll into view
 document.addEventListener('DOMContentLoaded', function() {
   const items = document.querySelectorAll('.schedule-list li');
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); // animate only once
+        // Add the show class with a small stagger per <ul>
+        const li = entry.target;
+        const siblings = Array.from(li.parentElement.querySelectorAll('li'));
+        const index = siblings.indexOf(li);
+
+        setTimeout(() => {
+          li.classList.add('show');
+        }, index * 150); // 150ms stagger within each list
+
+        observer.unobserve(li);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.2 });
 
   items.forEach(li => observer.observe(li));
 });
