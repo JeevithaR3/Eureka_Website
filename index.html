@@ -9,20 +9,31 @@
   <link rel="icon" type="image/png" href="logo2.png" />
   <link rel="shortcut icon" href="logo2.png" type="image/x-icon" />
   <style>
+    .title .subtitle {
+  display: block;      /* forces it onto a new line */
+  margin-top: 1.2rem;    /* spacing between the two lines */
+}
+
+    
     /* Countdown Styling */
     .hackathon-highlight {
       margin-top: 1.5rem;
       padding: 1.5rem;
       background: rgba(255, 255, 255, 0.05);
+      color:linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
       border-radius: 12px;
       text-align: center;
       animation: fadeInUp 1.2s ease;
     }
+    
     .hackathon-highlight h2 {
-      font-size: 2rem;
-      color: #FFD700; /* Gold for prestige */
-      margin-bottom: 0.5rem;
-    }
+  font-size: 2rem;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
     .hackathon-highlight p {
       color: #e9edef;
       font-size: 1.1rem;
@@ -31,23 +42,24 @@
     .countdown-timer {
       font-size: 1.8rem;
       font-weight: bold;
-      color: #25d366;
+      color:rgb(255, 109, 133);
       letter-spacing: 2px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
       text-shadow: 0 0 8px rgba(37, 211, 102, 0.7), 0 0 16px rgba(37, 211, 102, 0.4);
       animation: glowPulse 2s ease-in-out infinite, fadeSlide 1.2s ease;
       display: inline-block;
       padding: 0.5rem 1rem;
-      border: 2px solid rgba(37, 211, 102, 0.5);
+      border: 2px solid rgba(255, 60, 172, 0.5);
       border-radius: 10px;
-      background: rgba(37, 211, 102, 0.08);
+      background: rgba(255, 60, 172, 0.08); 
     }
     @keyframes glowPulse {
       0%, 100% {
-        text-shadow: 0 0 8px rgba(37, 211, 102, 0.7), 0 0 16px rgba(37, 211, 102, 0.4);
+        text-shadow:0 0 8px rgba(255, 60, 172, 0.7), 0 0 16px rgba(255, 126, 95, 0.4);
         transform: scale(1);
       }
       50% {
-        text-shadow: 0 0 18px rgba(37, 211, 102, 1), 0 0 28px rgba(37, 211, 102, 0.8);
+        text-shadow:0 0 8px rgba(255, 60, 172, 0.7), 0 0 16px rgba(255, 126, 95, 0.4);
         transform: scale(1.05);
       }
     }
@@ -97,7 +109,7 @@
       <nav class="nav" id="nav">
         <div class="nav-slider"></div>
         <a href="/">Home</a>
-        <a href="#about">About</a>
+        <!-- <a href="#about">About</a> -->
         <a href="/events">Events</a>
         <a href="/team">Team</a>
         <a href="/contact">Contact</a>
@@ -112,17 +124,17 @@
       <div class="hero-inner container">
         <div class="hero-text">
           <h1 class="title">
-            <span class="accent">Reva’s Hackathon Club Presents</span><br />
-            🚀 National Level Hackathon 2025
-          </h1>
+  <span class="accent">Eureka, Reva’s Hackathon Club Proudly Presents 🚀</span>
+  <span class="subtitle">Hack For Earth , National Level Hackathon 2025</span>
+</h1>
+
           <p class="lead">
             Join the nation’s brightest creators, hackers, and innovators — where ideas meet execution.  
             Compete, collaborate, and build the future with us.
           </p>
 
           <div class="hero-cta">
-            <a class="cta" id="joinBtn" href="/events">Learn more</a>
-            <a class="cta" id="joinBtn" href="https://forms.gle/5XCMKkRA3L2aPNih7" target="_blank" rel="noopener">Register Now!!</a>
+            <a class="cta" id="joinBtn" href="/events">Learn more</a><a class="cta" id="joinBtn" href="https://forms.gle/5XCMKkRA3L2aPNih7" target="_blank" rel="noopener">Register Now!!</a>
           </div>
         </div>
 
@@ -160,7 +172,7 @@
             </section>
 
     <section id="about" class="container section about">
-      <h2 class="section-title reveal">About Eureka</h2>
+      <h2 class="section-title accent-title reveal">About</h2>
       <div class="about-grid">
         <div class="card reveal delay-1">
           <h3>Mission</h3>

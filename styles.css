@@ -1,4 +1,9 @@
 /* Footer credit link accent hover */
+/* Force uniform background across site */
+body, .section, .section.alt {
+  background: #0b1020 !important; /* same deep navy tone from your :root */
+}
+
 .footer-credit-link {
   color: var(--accent2);
   text-decoration: none;
@@ -194,21 +199,21 @@
   color: transparent;
 }
 .role-tech {
-  background: linear-gradient(90deg, var(--accent3), #2e8fff);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 .role-design {
-  background: linear-gradient(90deg, var(--accent2), #ff6a00);
+  background:  linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 .role-lead {
-  background: linear-gradient(90deg, var(--accent1), #ffb300);
+  background:  linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -550,7 +555,7 @@ body{
 .nav{margin-left:auto;display:flex;align-items:center;gap:1rem}
 .nav a{color:var(--muted);text-decoration:none;padding:.6rem .8rem;border-radius:8px;transition:all .25s}
 .nav a:hover{color:white;background:rgba(255,255,255,0.03);transform:translateY(-2px)}
-.cta{background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:#fff !important;padding:.55rem .9rem;border-radius:8px;cursor:pointer;box-shadow:0 6px 20px rgba(213,0,249,0.12)}
+.cta{text-decoration: none;background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:#fff !important;padding:.55rem .9rem;border-radius:8px;cursor:pointer;box-shadow:0 6px 20px rgba(213,0,249,0.12)}
 
 /* Mobile nav toggle */
 .nav-toggle{display:none;margin-left:auto;background:none;border:0;color:var(--muted);font-size:20px;padding:8px}
@@ -589,8 +594,8 @@ body{
 .avatar{width:72px;height:72px;border-radius:14px;background:linear-gradient(90deg,var(--accent2),var(--accent3));display:inline-flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px;color:#042030;font-size:20px}
 
 /* Contact */
-.contact-form .row{display:flex;gap:12px;margin-bottom:12px}
-.contact-form input, .contact-form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+.contact-form .row{display:inline-flexbox;gap:225px;margin-left:112px}
+.contact-form input, .contact-form textarea{width:100%;padding:14px 30px;box-sizing: border-box; border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
 
 /* Footer */
 .site-footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
