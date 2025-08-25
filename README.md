@@ -3,10 +3,15 @@
 A modern, national-level hackathon website for "Hack for Earth" organized by Club Eureka, REVA University, in collaboration with Club Enigma, IIIT Kottayam.
 
 ## Features
-- Clean, modern design inspired by leading tech events
+- Clean, modern, glassmorphic UI inspired by leading tech events
 - Dedicated pages for About, Events, Team, and Contact
+- Modern responsive grid for team members with avatars and bios
+- Animated navigation bar with accent slider
+- Shared footer with 3 columns (About, Quick Links, Social Media)
+- Favicon and browser tab branding
+- Social media integration (Instagram, LinkedIn)
 - Node.js + Express server for clean URLs (e.g., /about, /events)
-- Responsive and accessible layout
+- Fully responsive and accessible layout
 
 ## Event Highlights
 - Focus on United Nations Sustainable Development Goals (UN SDGs)
@@ -33,8 +38,14 @@ A modern, national-level hackathon website for "Hack for Earth" organized by Clu
 ## Folder Structure
 - `index.html` — Home page
 - `pages/` — About, Events, Team, Contact
+- `team/` — Team member images (for Team page)
 - `styles.css` — Main stylesheet
 - `server.js` — Node.js Express server
+## Social Media
+- [Instagram](https://www.instagram.com/club_eureka_/)
+- [LinkedIn](https://www.linkedin.com/in/club-eureka-735841356/)
+## Credits
+Website designed and built by [Patil](https://github.com/Markandeshwaragoudapatil) & [Jeevitha](https://github.com/JeevithaR3).
 
 ## Contact
 - Email: clubeureka1712@gmail.com
