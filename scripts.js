@@ -24,8 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Nav slider underline effect (works on all pages, runs after DOM loaded)
 function updateNavSliderAllNavs() {
   document.querySelectorAll('.nav').forEach(nav => {
-    const navSlider = nav.querySelector('.nav-slider');
-    const navLinks = Array.from(nav.querySelectorAll('a'));
+  const navSlider = nav.querySelector('.nav-slider');
+  // Only consider nav links that are not .cta (Registration)
+  const navLinks = Array.from(nav.querySelectorAll('a:not(.cta)'));
 
     function moveNavSliderTo(el) {
       if (!navSlider || !el) return;
@@ -155,6 +156,4 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   // join button micro interaction
-  const joinBtn = document.getElementById('joinBtn');
-  joinBtn && joinBtn.addEventListener('click', ()=>{ alert('Thanks for your interest! Join form coming soon.') });
 });
