@@ -1,15 +1,11 @@
-// Staggered reveal for schedule items
+// Reveal schedule items one by one as they scroll into view
 document.addEventListener('DOMContentLoaded', function() {
   const items = document.querySelectorAll('.schedule-list li');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const li = entry.target;
-        const index = Array.from(items).indexOf(li);
-        setTimeout(() => {
-          li.classList.add('show');
-        }, index * 120); // 120ms stagger
-        observer.unobserve(li);
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // animate only once
       }
     });
   }, { threshold: 0.15 });
