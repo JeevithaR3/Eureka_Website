@@ -528,10 +528,11 @@ body{
   width: 44px;
   height: 44px;
   flex: 0 0 44px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(213,0,249,0.12);
-  object-fit: contain; /* keeps logo proportions */
-  background: none; /* remove background color if any */
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+  background: none;
+  border: none;
 }
 
 .logo-text{font-weight:700;letter-spacing:0.2px}
