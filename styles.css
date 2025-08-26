@@ -1,3 +1,6 @@
+main .section-title, main .accent-title, main .glow, main .underline, main .reveal, main h1, main h2, main h3 {
+  text-align: center !important;
+}
 .section-title, .accent-title, .glow, .underline, .reveal, h1, h2, h3 {
   text-align: center !important;
 }
