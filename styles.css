@@ -1,3 +1,6 @@
+.section-title, .accent-title, .glow, .underline, .reveal, h1, h2, h3 {
+  text-align: center !important;
+}
 /* Footer credit link accent hover */
 /* Force uniform background across site */
 body, .section, .section.alt {
