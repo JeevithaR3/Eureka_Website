@@ -3,6 +3,14 @@
 body, .section, .section.alt {
   background: #0b1020 !important; /* same deep navy tone from your :root */
 }
+.section {
+  padding: 60px 0;
+}
+
+.section + .section {
+  padding-top: 0;   /* no extra top padding when stacked */
+}
+
 
 .footer-credit-link {
   color: var(--accent2);
