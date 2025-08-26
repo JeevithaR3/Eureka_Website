@@ -45,7 +45,7 @@ A modern, national-level hackathon website for "Hack for Earth" organized by Clu
 - [Instagram](https://www.instagram.com/club_eureka_/)
 - [LinkedIn](https://www.linkedin.com/in/club-eureka-735841356/)
 ## Credits
-Website designed and built by [Jeevitha R](https://www.linkedin.com/in/jeevitha-r-2160b7325) & [Patil](https://github.com/Markandeshwaragoudapatil) .
+Website designed and built by [Jeevitha R](https://www.linkedin.com/in/jeevitha-r-2160b7325) & [Patil](www.linkedin.com/in/markandeshwaragouda-patil-59aa89298) .
 
 ## Contact
 - Email: clubeureka1712@gmail.com
